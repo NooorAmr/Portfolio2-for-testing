@@ -1,0 +1,7 @@
+/* ^ Testimonial Section ^ */
+@media (max-width: 768px) {
+  .testimonial .carousel-item .testimonial-content {
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+}

@@ -1,0 +1,443 @@
+/* Global Style Sheet */
+:root {
+  --h-font: "Montserrat", sans-serif;
+  --p-font: "Poppins", sans-serif;
+  --h-color: #343434;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--p-font);
+  scroll-padding-top: 3.75rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--h-font);
+}
+
+p {
+  font-family: var(--p-font);
+}
+a,
+span {
+  display: inline-block;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.width-600 {
+  max-width: 600px;
+  width: 100%;
+}
+
+.py-8 {
+  padding-block: 5rem; /* to make Spaces between Sections */
+}
+.mb-6 {
+  margin-bottom: 3.75rem;
+}
+
+.fw-800 {
+  font-weight: 800;
+}
+
+.text-h-color {
+  color: var(--h-color);
+}
+.text-special {
+  color: #999999;
+}
+.fs-special {
+  font-size: 14px;
+}
+.section-title {
+  position: relative;
+  display: inline-block;
+  font-weight: 800;
+  font-size: 2rem;
+  z-index: 1;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -15px;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 40px;
+  background-image: url(../images/imgs/dots.png);
+  z-index: -1;
+}
+
+/* ^ NavBar Section ^ */
+.navbar-brand {
+  font-family: var(--h-font);
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 6px;
+  width: 0;
+  height: 3px;
+  background-color: black;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 80%;
+}
+
+/* ^ Home Section ^ */
+header {
+  background-image: linear-gradient(#000b, #000b), url(../images/imgs/bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.socialMedia-icons i {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+/* ^ About Section ^ */
+.about-img::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  width: 80%;
+  height: 80%;
+  background-image: url(../images/imgs/dots.png);
+  background-repeat: repeat;
+  z-index: 1;
+}
+
+span.special.fs-6.text-special.mb-3 {
+  letter-spacing: 3px;
+}
+
+.about-content p {
+  font-size: 0.875rem;
+}
+
+.progress {
+  height: 25px;
+}
+
+.progress-bar {
+  font-size: 14px;
+  line-height: 25px;
+}
+
+.btn-about a:first-child {
+  background-color: black;
+  color: white;
+  transition: all 0.5s;
+}
+
+.btn-about a:first-child:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.btn-about a:last-child {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  transition: all 0.5s;
+}
+
+.btn-about a:last-child:hover {
+  background-color: black;
+  color: white;
+}
+/* ^ Services Section ^ */
+.icon-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.icon-circle i {
+  color: black;
+  transition: all 0.3s ease;
+}
+
+.card:hover .icon-circle {
+  background-color: black;
+}
+
+.card:hover .icon-circle i {
+  color: white;
+}
+
+/* ^ Portfolio Section ^ */
+/* nav&tabs underline are also linking above with the navbar (DRY concept) */
+.nav-tabs .nav-link {
+  background-color: white;
+  color: black;
+  font-weight: 700;
+  margin: 0 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: none;
+  border: none;
+}
+.portfolio-content {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-content img {
+  transition: all 0.5s ease;
+}
+
+.portfolio-content:hover img {
+  transform: scale(1.1);
+}
+
+.portfolio-content .layer {
+  background-color: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.portfolio-content:hover .layer {
+  opacity: 1;
+}
+
+.portfolio-content .layer h3 {
+  letter-spacing: 2px;
+}
+
+.portfolio-content .layer i {
+  background-color: black;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.portfolio-content .layer i:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+/* ^ Testimonial ^ */
+.carousel-inner p {
+  word-spacing: 3px;
+  font-size: 17px;
+  font-weight: 400;
+}
+.carousel-indicators [data-bs-target] {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+.testimonial .carousel-item {
+  padding-top: 30px;
+}
+
+.testimonial .carousel-item .testimonial-content {
+  width: 75%;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* ^ Team Section ^ */
+.team .team-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.team .team-card img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.6s ease;
+}
+
+.team .team-card .card-body {
+  background-color: #5b5b5b;
+  color: #fff;
+  padding: 20px 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.team .team-card .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0;
+  transform: rotateY(180deg);
+  transform-origin: center;
+  transition: all 0.6s ease;
+  z-index: 1;
+}
+
+.team .team-card:hover img {
+  transform: scale(1.2);
+}
+
+.team .team-card:hover .layer {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+
+.team .team-card .layer i {
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+.team .team-card .layer i:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid #000;
+}
+
+/* ^ Contact Us Section ^ */
+
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #f7f7f7;
+  color: #000;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-card:hover .icon-circle {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+.icon-circle i {
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.contact-card:hover .icon-circle {
+  background-color: #000;
+  color: #fff;
+}
+
+/* ^ Contact Us Section ^ */
+.form-control {
+  background-color: #f4f4f4;
+  border: none;
+}
+
+form textarea {
+  height: 150px;
+  resize: none;
+}
+
+.form-control:focus {
+  border: none;
+  box-shadow: none;
+}
+.form-control:active {
+  background-color: #f4f4f4;
+  box-shadow: none;
+  border: none;
+}
+.form-control:focus-visible {
+  background-color: #f4f4f4;
+  box-shadow: none;
+  border: none;
+}
+form button {
+  background-color: #000;
+  color: white;
+  width: 150px;
+  padding: 10px 0;
+  margin-bottom: 50px;
+  border-radius: 7px;
+  transition: all 0.5s ease;
+}
+
+form button:hover {
+  color: black;
+  background-color: white;
+}
+/* ^ Footer ^ */
+footer {
+  background-color: #1c1c1c;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #6c797c;
+}
+footer span {
+  min-width: 400px;
+  font-weight: 400;
+}
